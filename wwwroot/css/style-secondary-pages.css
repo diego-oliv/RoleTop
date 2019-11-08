@@ -1,0 +1,33 @@
+html {
+    height: 100%
+}
+
+body {
+    background-color: #ffc600;
+    text-align: center;
+    height: 100%;
+}
+
+main {
+    width: 25%;
+    align-self: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+@media (max-width: 1025px) {
+    main {
+        width: 60%;
+    }
+}
+
+@media (max-width: 920px) {
+    main {
+        width: 75%;
+    }
+}

@@ -1,0 +1,83 @@
+main {
+     width: 80%;
+}
+
+#painel {
+     display: flex;
+     justify-content: space-between;
+}
+
+h3 {
+     font-size: 1.4em;
+     color: #7d0093;
+     font-weight: bold;
+     text-shadow: 
+     -1px -1px white,
+     1px -1px white,
+     -1px 1px white,
+     1px 1px white;
+     padding: 5px 0 5px 0;
+}
+
+h4 {
+     font-size: 2.5em;
+}
+
+.box-status-solicitacoes {
+     width: 30%;
+     padding-top: 1em;
+     padding-bottom: 1em;
+     text-align: center;
+}
+
+.box-status-solicitacoes > p {
+     font-size: 1.8em;
+     padding: .7em 0 0 0;
+}
+
+.box-status-solicitacoes.aprovados {
+     background-color: green;
+}
+
+.box-status-solicitacoes.reprovados {
+     background-color: red;
+}
+
+.box-status-solicitacoes.pendentes {
+     background-color: blue;
+}
+
+table {
+     text-align: center;
+     color: #fff;
+     border: 0.1em dashed black;
+     width: 100%;
+     padding: 0.2em;
+     word-break: normal;
+}
+
+table th {
+     background-color: #7d0093;
+}
+
+table a {
+     text-decoration: none;
+}
+
+table a:hover {
+     text-decoration: underline;
+}
+
+tfoot td {
+     text-align: center;
+     color: #ffc600;
+     background-color: #7d0093;
+}
+
+thead > tr:first-child > th:last-child {
+     padding: 0 1px
+}
+
+tbody > tr {
+     background-color: black;
+}

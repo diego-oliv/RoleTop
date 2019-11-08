@@ -1,0 +1,100 @@
+﻿@{
+    var nomeView = (string) ViewData["NomeView"];
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <!--
+    <link rel="stylesheet" type="text/css" href="css/style-secondary-pages.css">
+    <link rel="stylesheet" type="text/css" href="css/style-form-pages.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/style-dashboard.css">
+    -->
+    @if(!"Home".Equals(nomeView))
+    {
+        <link rel="stylesheet" type="text/css" href="~/css/style-form-pages.css">
+        <link rel="stylesheet" type="text/css" href="~/css/style-secondary-pages.css">
+    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top</title>
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body class="flex-container">
+    <header>
+            <nav>
+                <div class="section-container">
+                    <ul>
+                        <li id="bt-mobile-menu">
+                            <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active">Principal</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#historia'>Conheça o Galpão</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#galeria'>Galeria de Fotos</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#local'>Localização</a></li>
+                        <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="cadastro.html">agende seu evento!</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--
+            Não esquecer de colocar aqui a #LogoArea
+        -->
+        @if ("Home".Equals(nomeView))
+        {
+            @await Html.PartialAsync("_HeaderHomePage");
+        }
+    </header>
+            @RenderBody()
+    <footer>
+        <div class="section-container">
+            <address>
+                Alameda Barão de Limeira, 539 - Campos Elíseos - SP
+                <br />
+                roletop@gmail.com
+                <br />
+                (11) 1234 - 6666
+            </address>
+            <a href="#">Voltar para o topo!</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-skull");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-skull");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>
