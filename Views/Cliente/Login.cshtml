@@ -1,20 +1,24 @@
 <main>
      <h2>Faça o evento mais top do ano!</h2>
-     <form method="GET" action="agendamento.html">
+     <form method="POST" action='@Url.Action("Login", "Cliente")'>
 
           <div>
                <label for="email">Email</label>
                <br />
-               <input type="email" id="email" required>
+               <input type="email" id="email" name="email" required>
           </div>
 
           <div>
                <label for="senha">Senha
                <br />
-               <input type="password" id="senha" required>
+               <input type="password" id="senha" name="senha" required>
                </label>
           </div>
 
           <input type="submit" value="Entrar">
+
+          <div id="link-cadastro">
+               <a href='@Url.Action("Index", "Cadastro")'>Quero me cadastrar</a>
+          </div>
      </form>
 </main>

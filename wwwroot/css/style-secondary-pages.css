@@ -20,6 +20,13 @@ main {
     height: 100%;
 }
 
+#link-cadastro {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
 @media (max-width: 1025px) {
     main {
         width: 60%;
