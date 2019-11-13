@@ -13,11 +13,7 @@ namespace project_RoleTopMVC.Models
         public string Email {get; set;}
         public string Senha {get; set;}
 
-        public Cliente()
-        {
-
-        }
-        public Cliente(string nome, string cep, string endereco, string telefone, string cpfcnpj, string email, string senha)
+        public Cliente(string nome, string cep, string endereco, string telefone, string cpfcnpj, string email, string senha, string complemento)
         {
             this.Nome = nome;
             this.CEP = cep;
@@ -26,6 +22,7 @@ namespace project_RoleTopMVC.Models
             this.CpfCnpj = cpfcnpj;
             this.Email = email;
             this.Senha = senha;
+            this.Complemento = complemento;
         }
     }
 }

@@ -65,3 +65,4 @@ C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTop.
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTop.csproj.CopyComplete
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Falha.g.cshtml.cs
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs
+C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Agendamento\index.g.cshtml.cs

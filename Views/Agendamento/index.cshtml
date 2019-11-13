@@ -1,0 +1,51 @@
+<main>
+     <h2>Agende seu evento top!</h2>
+     <form method="POST" action='@Url.Action("Agendar","Agendamento")'>
+
+          <div>
+               <label for="tema">Tema do Evento</label>
+               <br />
+               <input id="tema" type="text" placeholder="Casamento, formatura, etc." name="tema" required>
+          </div>
+
+          <div>
+               <label for="data">Dia e Hora</label>
+               <br />
+               <input id="data" type="datetime-local" name="data" required>
+          </div>
+
+          <div>
+               <label for="quantidade">Número de Pessoas</label>
+               <br />
+               <input id="quantidade" type="number" placeholder="Máximo de 400" maxlength="3" minlength="3" name="quantidade" required>
+          </div>
+
+          <div>
+               <label for="tipo">Tipo do Evento</label>
+               <select id="tipo" name="tipo" required>
+               <option value="" disabled selected>Selecione</option>
+               <option value="publico">Público</option>
+               <option value="privado">Privado</option>
+               </select>
+          </div>
+
+          <div>
+               <label for="servico">Serviços Necessários</label>
+               <select id="servico" name="servico" required>
+               <option value="" disabled selected>Selecione</option>
+               <option value="nenhum">Nenhum</option>
+               <option value="som">Som</option>
+               <option value="iluminacao">Iluminação</option>
+               <option value="ambos">Som & Iluminação</option>
+               </select>
+          </div>
+
+          <div>
+               <label for="descricao">Descrição do Evento</label>
+               <br />
+               <input id="descricao" type="text" placeholder="Nos conte sobre o seu evento" maxlength="250" name="descricao" required>
+          </div>
+
+          <input type="submit" value="Agendar Data">
+     </form>
+</main>
