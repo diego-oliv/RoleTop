@@ -21,16 +21,20 @@ namespace project_RoleTopMVC.Controllers
         {
             ViewData["Action"] = "Cadastro";
             try{
-                Cliente cliente = new Cliente(form["nome"], 
-                form["cep"], 
-                form["endereco"], 
-                form["telefone"], 
-                form["cpf/cnpj"], 
-                form["email"], 
-                form["senha"], 
-                form["complemento"]);
-                clienteRepository.Inserir(cliente);
+                if(form["senha"] == form["confirmar-senha"]){
+                    Cliente cliente = new Cliente(form["nome"], 
+                    form["cep"], 
+                    form["endereco"], 
+                    form["telefone"], 
+                    form["cpf/cnpj"], 
+                    form["email"], 
+                    form["senha"], 
+                    form["complemento"]);
+                    clienteRepository.Inserir(cliente);
                     return View("Sucesso");
+                }
+                return View("Falha");
+
             } catch(Exception e) {
                 System.Console.WriteLine(e.StackTrace);
                 return View("Falha");

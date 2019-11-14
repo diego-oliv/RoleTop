@@ -14,17 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\35883602800\Desktop\project-RoleTopMVC\Views\_ViewImports.cshtml"
-using RoleTop;
+using project_RoleTopMVC;
 
 #line default
 #line hidden
 #line 2 "C:\Users\35883602800\Desktop\project-RoleTopMVC\Views\_ViewImports.cshtml"
-using RoleTop.Models;
+using project_RoleTopMVC.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7fce2711ecc73d61b55258014f0e7156f8b22db9", @"/Views/Cadastro/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f8fc0cfda6b2bb54f88e5d7a55c241985d2df4ff", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aa9346c35ab2aa533a85ce99e20e39341cea489f", @"/Views/_ViewImports.cshtml")]
     public class Views_Cadastro_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "POST", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -55,7 +55,7 @@ using RoleTop.Models;
             WriteLiteral("<main>\r\n     <h2>Cadastra aí meu consagrado!</h2>\r\n     ");
             EndContext();
             BeginContext(56, 2099, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fce2711ecc73d61b55258014f0e7156f8b22db93673", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fce2711ecc73d61b55258014f0e7156f8b22db93695", async() => {
                 BeginContext(129, 2019, true);
                 WriteLiteral(@"
           <div>

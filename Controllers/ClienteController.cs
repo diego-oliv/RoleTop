@@ -20,10 +20,6 @@ namespace RoleTop.Controllers
         {
             ViewData["Action"] = "Login";
             try{
-                System.Console.WriteLine("=======================");
-                System.Console.WriteLine(form["email"]);
-                System.Console.WriteLine(form["senha"]);
-                System.Console.WriteLine("=======================");
                 return View("Sucesso");
             } catch(Exception e){
                 System.Console.WriteLine(e.StackTrace);

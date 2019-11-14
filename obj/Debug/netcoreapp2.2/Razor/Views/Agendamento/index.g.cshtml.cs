@@ -14,17 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\35883602800\Desktop\project-RoleTopMVC\Views\_ViewImports.cshtml"
-using RoleTop;
+using project_RoleTopMVC;
 
 #line default
 #line hidden
 #line 2 "C:\Users\35883602800\Desktop\project-RoleTopMVC\Views\_ViewImports.cshtml"
-using RoleTop.Models;
+using project_RoleTopMVC.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a5f650be24629c51e6add217a6a2e6e7174ccbef", @"/Views/Agendamento/index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f8fc0cfda6b2bb54f88e5d7a55c241985d2df4ff", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aa9346c35ab2aa533a85ce99e20e39341cea489f", @"/Views/_ViewImports.cshtml")]
     public class Views_Agendamento_index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -63,7 +63,7 @@ using RoleTop.Models;
             WriteLiteral("<main>\r\n     <h2>Agende seu evento top!</h2>\r\n     ");
             EndContext();
             BeginContext(51, 1929, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef5889", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef5911", async() => {
                 BeginContext(117, 827, true);
                 WriteLiteral(@"
 
@@ -91,7 +91,7 @@ using RoleTop.Models;
                ");
                 EndContext();
                 BeginContext(944, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef7134", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef7156", async() => {
                     BeginContext(979, 9, true);
                     WriteLiteral("Selecione");
                     EndContext();
@@ -119,7 +119,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1014, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef9261", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef9283", async() => {
                     BeginContext(1038, 7, true);
                     WriteLiteral("Público");
                     EndContext();
@@ -141,7 +141,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1071, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef10742", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef10764", async() => {
                     BeginContext(1095, 7, true);
                     WriteLiteral("Privado");
                     EndContext();
@@ -163,7 +163,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               </select>\r\n          </div>\r\n\r\n          <div>\r\n               <label for=\"servico\">Serviços Necessários</label>\r\n               <select id=\"servico\" name=\"servico\" required>\r\n               ");
                 EndContext();
                 BeginContext(1319, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef12434", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef12456", async() => {
                     BeginContext(1354, 9, true);
                     WriteLiteral("Selecione");
                     EndContext();
@@ -191,7 +191,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1389, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef14564", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef14586", async() => {
                     BeginContext(1412, 6, true);
                     WriteLiteral("Nenhum");
                     EndContext();
@@ -213,7 +213,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1444, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef16045", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef16067", async() => {
                     BeginContext(1464, 3, true);
                     WriteLiteral("Som");
                     EndContext();
@@ -235,7 +235,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1493, 46, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef17523", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef17545", async() => {
                     BeginContext(1520, 10, true);
                     WriteLiteral("Iluminação");
                     EndContext();
@@ -257,7 +257,7 @@ using RoleTop.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1556, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef19009", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5f650be24629c51e6add217a6a2e6e7174ccbef19031", async() => {
                     BeginContext(1578, 16, true);
                     WriteLiteral("Som & Iluminação");
                     EndContext();
