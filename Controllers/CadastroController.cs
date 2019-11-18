@@ -33,11 +33,11 @@ namespace project_RoleTopMVC.Controllers
                     clienteRepository.Inserir(cliente);
                     return View("Sucesso");
                 }
-                return View("Falha");
+                return View("FalhaSenha");
 
             } catch(Exception e) {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Falha");
+                return View("FalhaSenha");
             }
         }
     }
