@@ -3,7 +3,7 @@ using project_RoleTopMVC.Models;
 
 namespace project_RoleTopMVC.Respositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : RepositoryBase
     {
         private const string PATH = "Database/Cliente.csv";
         public ClienteRepository()
@@ -43,21 +43,6 @@ namespace project_RoleTopMVC.Respositories
         private string PrepararRegistroCSV(Cliente cliente)
         {
             return $"nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};telefone={cliente.Telefone};endereco={cliente.Endereco}; cep={cliente.CEP};cpfcnpj={cliente.CpfCnpj};complemento={cliente.Complemento}";
-        }
-        public string ExtrairValorDoCampo(string nomeCampo, string linha)
-        {
-            var chave = nomeCampo;
-            var indiceChave = linha.IndexOf(chave);
-            var indiceTerminal = linha.IndexOf(";", indiceChave);
-            var valor = "";
-            if(indiceTerminal != -1)
-            {
-                valor = linha.Substring(indiceChave, indiceTerminal - indiceChave);
-            }else{
-                valor = linha.Substring(indiceChave);
-            }
-        System.Console.WriteLine($"Campo: {nomeCampo} tem valor {valor}");
-        return valor.Replace(nomeCampo + "=", "");
         }
     }
 }

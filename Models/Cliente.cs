@@ -25,8 +25,8 @@ namespace project_RoleTopMVC.Models
             this.Complemento = complemento;
         }
 
-          public Cliente()
-          {
-          }
-     }
+        public Cliente()
+        {
+        }
+    }
 }

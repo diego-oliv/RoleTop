@@ -2966,11 +2966,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\FalhaSenha.cshtml",
-      "TargetPath": "Views\\Shared\\FalhaSenha.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -3013,6 +3008,11 @@
     {
       "FilePath": "Views\\Shared\\Sucesso.cshtml",
       "TargetPath": "Views\\Shared\\Sucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "HTML_Reference\\Historico.cshtml",
+      "TargetPath": "HTML_Reference\\Historico.cshtml",
       "FileKind": "mvc"
     },
     {

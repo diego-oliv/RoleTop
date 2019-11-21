@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using project_RoleTopMVC.Models;
 using project_RoleTopMVC.Respositories;
+using project_RoleTopMVC.ViewModels;
 
 namespace project_RoleTopMVC.Controllers
 {
@@ -33,11 +34,11 @@ namespace project_RoleTopMVC.Controllers
                     clienteRepository.Inserir(cliente);
                     return View("Sucesso");
                 }
-                return View("FalhaSenha");
+                return View("Falha", new RespostaViewModel("As senhas não são iguais."));
 
             } catch(Exception e) {
                 System.Console.WriteLine(e.StackTrace);
-                return View("FalhaSenha");
+                return View("Falha");
             }
         }
     }
