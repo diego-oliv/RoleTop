@@ -14,7 +14,6 @@ namespace RoleTop.Controllers
     {
         private const string SESSION_CLIENTE_EMAIL = "email_cliente";
         private ClienteRepository clienteRepository = new ClienteRepository();
-        private AgendamentoRepository agendamentoRepository = new AgendamentoRepository();
         [HttpGet]
         public IActionResult Login()
         {
@@ -45,12 +44,6 @@ namespace RoleTop.Controllers
                 System.Console.WriteLine(e.StackTrace);
                 return View("Erro");
             }
-        }
-        public IActionResult Agendamento()
-        {
-            var emailCliente = HttpContext.Session.GetString("email_cliente");
-            var agendamento = agendamentoRepository(email_cliente);
-            return View(new AgendamentoViewModel)
         }
     }
 }

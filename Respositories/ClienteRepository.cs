@@ -8,8 +8,7 @@ namespace project_RoleTopMVC.Respositories
         private const string PATH = "Database/Cliente.csv";
         public ClienteRepository()
         {
-            if (!File.Exists(PATH))
-            {
+            if (!File.Exists(PATH)){
                 File.Create(PATH).Close();
             }
         }

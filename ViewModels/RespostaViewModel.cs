@@ -3,12 +3,9 @@ namespace project_RoleTopMVC.ViewModels
     public class RespostaViewModel
     {
         public string Mensagem {get; set;}
-        public RespostaViewModel()
-        {
-
+        public RespostaViewModel(){
         }
-        public RespostaViewModel(string mensagem)
-        {
+        public RespostaViewModel(string mensagem){
             this.Mensagem = mensagem;
         }
     }

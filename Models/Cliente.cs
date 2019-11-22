@@ -12,21 +12,19 @@ namespace project_RoleTopMVC.Models
         public string CpfCnpj {get; set;}
         public string Email {get; set;}
         public string Senha {get; set;}
-
-        public Cliente(string nome, string cep, string endereco, string telefone, string cpfcnpj, string email, string senha, string complemento)
-        {
-            this.Nome = nome;
-            this.CEP = cep;
-            this.Endereco = endereco;
-            this.Telefone = telefone;
-            this.CpfCnpj = cpfcnpj;
-            this.Email = email;
-            this.Senha = senha;
-            this.Complemento = complemento;
-        }
-
         public Cliente()
         {
+        }
+        public Cliente(string Nome, string CEP, string Endereco, string Telefone, string CpfCnpj, string Email, string Senha, string Complemento)
+        {
+            this.Nome = Nome;
+            this.CEP = CEP;
+            this.Endereco = Endereco;
+            this.Telefone = Telefone;
+            this.CpfCnpj = CpfCnpj;
+            this.Email = Email;
+            this.Senha = Senha;
+            this.Complemento = Complemento;
         }
     }
 }
