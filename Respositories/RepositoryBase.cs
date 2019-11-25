@@ -2,7 +2,7 @@ namespace project_RoleTopMVC.Respositories
 {
     public class RepositoryBase
     {
-        protected string ExtrairValorDoCampo(string nomeCampo, string linha)
+        public string ExtrairValorDoCampo(string nomeCampo, string linha)
         {
             var chave = nomeCampo;
             var indiceChave = linha.IndexOf(chave);
