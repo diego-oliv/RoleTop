@@ -11,12 +11,16 @@ using project_RoleTopMVC.ViewModels;
 
 namespace project_RoleTopMVC.Controllers
 {
-    public class CadastroController : Controller
+    public class CadastroController : AbstractController
     {
         ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
-            return View();
+            return View(new BaseViewModel(){
+                NomeView = "Cadastro",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
         public IActionResult CadastrarCliente(IFormCollection form)
         {
@@ -32,13 +36,13 @@ namespace project_RoleTopMVC.Controllers
                     form["senha"], 
                     form["complemento"]);
                     clienteRepository.Inserir(cliente);
-                    return View("Sucesso");
+                    return View("Sucesso", new RespostaViewModel("O cliente foi cadastrado com sucesso."));
                 }
                 return View("Falha", new RespostaViewModel("As senhas não são iguais."));
 
             } catch(Exception e) {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Falha");
+                return View("Falha", new RespostaViewModel("O cadastro não pode ser concluído."));
             }
         }
     }

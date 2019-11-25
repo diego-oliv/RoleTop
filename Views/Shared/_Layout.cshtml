@@ -1,6 +1,4 @@
-﻿@{
-    var nomeView = (string) ViewData["NomeView"];
-}
+﻿@model project_RoleTopMVC.ViewModels.BaseViewModel
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/style-dashboard.css">
     -->
-    @if(!"Home".Equals(nomeView))
+    @if(!"Home".Equals(@Model.NomeView))
     {
         <link rel="stylesheet" type="text/css" href="~/css/style-form-pages.css">
         <link rel="stylesheet" type="text/css" href="~/css/style-secondary-pages.css">
@@ -38,8 +36,15 @@
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#historia'>Conheça o Galpão</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#galeria'>Galeria de Fotos</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#local'>Localização</a></li>
-                        <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Agendamento")'>agende seu evento!</a></li>
+                        @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                        {
+                        <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
+                        } else
+                        {
+                            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Diga tchau!</a></li>
+                            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Historico">Agendamentos</a></li>
+                        }
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cadastro")'>agende seu evento!</a></li>
                     </ul>
                 </div>
             </nav>
@@ -47,7 +52,7 @@
         <!--
             Não esquecer de colocar aqui a #LogoArea
         -->
-        @if ("Home".Equals(nomeView))
+        @if ("Home".Equals(@Model.NomeView))
         {
             @await Html.PartialAsync("_HeaderHomePage");
         }

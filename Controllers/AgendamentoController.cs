@@ -1,17 +1,34 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using project_RoleTopMVC.Respositories;
+using project_RoleTopMVC.ViewModels;
 
 namespace project_RoleTopMVC.Controllers
 {
-    public class AgendamentoController : Controller
+    public class AgendamentoController : AbstractController
     {
-        [HttpGet]
+        ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
-            return View();
+            AgendamentoViewModel agendamento = new AgendamentoViewModel();
+
+            var UsuarioLogado = ObterUsuarioSession();
+            var NomeUsuarioLogado = ObterUsuarioNomeSession();
+            if(!string.IsNullOrEmpty(NomeUsuarioLogado)){
+                agendamento.NomeUsuario = NomeUsuarioLogado;
+            }
+
+            var ClienteLogado = clienteRepository.ObterPor(UsuarioLogado);
+            if(ClienteLogado != null){
+                agendamento.Cliente = ClienteLogado;
+            }
+            agendamento.NomeView = "Agendamento";
+            agendamento.NomeUsuario = ObterUsuarioNomeSession();
+            agendamento.UsuarioEmail = ObterUsuarioSession();
+            return View(agendamento);
         }
-        [HttpPost]
+        
         public IActionResult Agendar(IFormCollection form)
         {
             ViewData["Action"] = "Agendamento";

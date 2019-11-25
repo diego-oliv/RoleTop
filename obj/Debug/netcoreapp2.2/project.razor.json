@@ -2986,6 +2986,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Administrador\\dashboard.cshtml",
+      "TargetPath": "Views\\Administrador\\dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Agendamento\\index.cshtml",
       "TargetPath": "Views\\Agendamento\\index.cshtml",
       "FileKind": "mvc"

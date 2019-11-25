@@ -1,7 +1,9 @@
+@model project_RoleTopMVC.ViewModels.RespostaViewModel
 <main>
-     <h2>
-          @ViewData["Action"] foi suave, meu chapa.
-     </h2>
-     <br />
+     <div id="mensagem-falha">
+          <p>
+               @Model.Mensagem
+          </p>
+     </div>
      <a id="backHome" href='@Url.Action("Index", "Home")'>Voltar para a página principal.</a>
 </main>
