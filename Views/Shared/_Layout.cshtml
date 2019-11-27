@@ -44,7 +44,13 @@
                             <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Diga tchau!</a></li>
                             <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Historico">Agendamentos</a></li>
                         }
+                        @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                        {
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cadastro")'>agende seu evento!</a></li>
+                        } else
+                        {
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Agendamento")'>agende seu evento!</a></li>
+                        }
                     </ul>
                 </div>
             </nav>

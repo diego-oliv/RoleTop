@@ -14,6 +14,7 @@ namespace project_RoleTopMVC.Controllers
     public class CadastroController : AbstractController
     {
         ClienteRepository clienteRepository = new ClienteRepository();
+        
         public IActionResult Index()
         {
             return View(new BaseViewModel(){
@@ -27,14 +28,15 @@ namespace project_RoleTopMVC.Controllers
             ViewData["Action"] = "Cadastro";
             try{
                 if(form["senha"] == form["confirmar-senha"]){
-                    Cliente cliente = new Cliente(form["nome"], 
-                    form["cep"], 
-                    form["endereco"], 
-                    form["telefone"], 
-                    form["cpf/cnpj"], 
-                    form["email"], 
-                    form["senha"], 
-                    form["complemento"]);
+                    Cliente cliente = new Cliente(
+                        form["nome"], 
+                        form["cep"], 
+                        form["endereco"], 
+                        form["telefone"], 
+                        form["cpf/cnpj"], 
+                        form["email"], 
+                        form["senha"], 
+                        form["complemento"]);
                     clienteRepository.Inserir(cliente);
                     return View("Sucesso", new RespostaViewModel("O cliente foi cadastrado com sucesso."));
                 }

@@ -6,7 +6,6 @@ namespace project_RoleTopMVC.Models
     {
         public Cliente Cliente {get;set;}
         public Evento Evento {get;set;}
-        public DateTime DataDoPedido {get;set;}
 
         public Agendamento()
         {

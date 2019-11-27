@@ -13,7 +13,7 @@ namespace project_RoleTopMVC.Models
         public string Descricao {get;set;}
 
         public Evento(){
-            this.Cliente = new Cliente();
+            //this.Cliente = new Cliente();
         }
         public Evento (string tema, string data, string quantidade, string tipo, string servicos, string descricao){
             this.Tema = tema;
@@ -22,6 +22,7 @@ namespace project_RoleTopMVC.Models
             this.TipoDoEvento = tipo;
             this.Servicos = servicos;
             this.Descricao = descricao;
+            this.Cliente = new Cliente();
         }
     }
 }

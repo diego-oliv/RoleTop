@@ -4,6 +4,6 @@ namespace project_RoleTopMVC.ViewModels
 {
     public class HistoricoAgendamentoViewModel : BaseViewModel
     {
-        public List<Evento> Eventos {get;set;}
+        public List<Agendamento> Eventos {get;set;}
     }
 }

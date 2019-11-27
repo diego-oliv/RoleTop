@@ -35,12 +35,18 @@ namespace project_RoleTopMVC.Controllers
         public IActionResult Agendar(IFormCollection form)
         {
             Agendamento agendamento = new Agendamento();
-            Cliente cliente = new Cliente();
+            //Cliente cliente = new Cliente();
             Evento evento = new Evento(form["tema"], form["data"], form["quantidade"], form["tipo"], form["servico"], form["descricao"]);
-            agendamento.Cliente = cliente;
-            agendamento.DataDoPedido = DateTime.Now;
+            evento.Cliente = clienteRepository.ObterPor(ObterUsuarioSession());
+            agendamento.Evento = evento;
+            agendamento.Cliente = evento.Cliente;
             if(agendamentoRepository.Inserir(agendamento))
             {
+                System.Console.WriteLine(agendamento.Evento.Tema);
+                System.Console.WriteLine(agendamento.Evento.Descricao);
+                System.Console.WriteLine(agendamento.Evento.Cliente.Nome);
+                System.Console.WriteLine(agendamento.Evento.NumeroDePessoas);
+                System.Console.WriteLine(agendamento.Evento.NumeroDePessoas);
                 return View("Sucesso", new RespostaViewModel(){
                     Mensagem = "Aguarde a aprovação dos nosso administradores",
                     NomeView = "Sucesso",

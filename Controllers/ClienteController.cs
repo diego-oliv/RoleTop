@@ -14,10 +14,10 @@ namespace RoleTop.Controllers
     public class ClienteController : AbstractController
     {
         private ClienteRepository clienteRepository = new ClienteRepository();
+        private AgendamentoRepository agendamentoRepository = new AgendamentoRepository();
         [HttpGet]
         public IActionResult Login()
         {
-
             return View(new BaseViewModel(){
                 NomeView = "Login",
                 UsuarioEmail = ObterUsuarioSession(),
@@ -56,6 +56,18 @@ namespace RoleTop.Controllers
             HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Historico()
+        {
+            var emailCliente = ObterUsuarioSession();
+            var eventos = agendamentoRepository.ObterTodosPorCliente(emailCliente);
+            return View(new HistoricoAgendamentoViewModel()
+            {
+                Eventos = eventos,
+                NomeView = "Histórico",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
+            });
         }
     }
 }

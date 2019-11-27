@@ -15,6 +15,7 @@ namespace project_RoleTopMVC.Respositories
                 File.Create(PATH).Close();
             }
         }
+        
         public bool Inserir(Agendamento agendamento){
             var linha = new string[] {PrepararRegistroCSV(agendamento)};
             File.AppendAllLines(PATH, linha);
@@ -60,7 +61,7 @@ namespace project_RoleTopMVC.Respositories
             Cliente cliente = agendamento.Cliente;
             Evento evento = agendamento.Evento;
 
-            return $"cliente_nome={cliente.Nome};cliente_cpfcnpj{cliente.CpfCnpj};cliente_telefone{cliente.Telefone};cliente_email{cliente.Email};evento_tema{evento.Tema};evento_data{evento.DataDoAgendamento};evento_quantidadePessoas{evento.NumeroDePessoas};evento_tipo{evento.TipoDoEvento};evento_servicos{evento.Servicos};evento_descricao{evento.Descricao}";
+            return $"cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
         }
     }
 }
