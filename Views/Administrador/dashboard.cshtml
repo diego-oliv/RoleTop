@@ -1,3 +1,4 @@
+@model project_RoleTopMVC.ViewModels.DashboardViewModel
 <main>
      <h2>Dashboard</h2>
 
@@ -6,17 +7,17 @@
           <div id="painel">
                <div class="box-status-solicitacoes aprovados">
                     <h4>Aprovados</h4>
-                    <p>7</p>
+                    <p>@Model.AgendamentosAprovados</p>
                </div>
 
                <div class="box-status-solicitacoes pendentes">
                     <h4>Pendentes</h4>
-                    <p>7</p>
+                    <p>@Model.AgendamentosPendentes</p>
                </div>
 
                <div class="box-status-solicitacoes reprovados">
                     <h4>Reprovados</h4>
-                    <p>7</p>
+                    <p>@Model.AgendamentosRecusados</p>
                </div>
           </div>
      </section>
@@ -38,30 +39,18 @@
                <tfoot>
                     <tr>
                          <td colspan="7">
-                              <p>Pedidos atualizados em 12/12/2012 às 3:07</p>
+                              <p>Pedidos atualizados em 12/12/2012 às @DateTime.Now</p>
                          </td>
                     </tr>
                </tfoot>
 
                <tbody>
-                    <tr>
-                         <td>Megan Fox</td>
-                         <td>Casamento</td>
-                         <td>11/05/2020 19:00</td>
-                         <td>Privado</td>
-                         <td>Som</td>
-                         <td><a href="#"><i class="fas fa-check"></i></a></td>
-                         <td><a href="#"><i class="fas fa-times"></i></a></td>
-                    </tr>
-                    <tr>
-                         <td>Madame Villa Lobos</td>
-                         <td>Show</td>
-                         <td>12/09/2019 14:00</td>
-                         <td>Público</td>
-                         <td>Iluminação</td>
-                         <td><a href="#"><i class="fas fa-check"></i></a></td>
-                         <td><a href="#"><i class="fas fa-times"></i></a></td>
-                    </tr>
+                         @foreach (var agendamento in Model.Agendamentos)
+                         {
+                              <tr>
+                                   <td></td>
+                              </tr>
+                         }
                </tbody>
           </table>
      </section>

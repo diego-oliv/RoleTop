@@ -62,5 +62,9 @@ namespace project_RoleTopMVC.Controllers
                 });
             }
         }
+        public IActionResult Aprovar(uint id)
+        {
+            Agendamento agendamento = agendamentoRepository.ObterPor(id);
+        }
     }
 }

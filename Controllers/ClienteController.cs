@@ -37,7 +37,6 @@ namespace RoleTop.Controllers
                     if(cliente.Senha.Equals(senha)){
                         HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
                         HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                        // NÃO ESQUECER DE CRIAR O HISTÓRICO DE EVENTOS DO CLIENTE
                         return RedirectToAction("Historico", "Cliente");
                     } else {
                         return View("Falha", new RespostaViewModel("A senha está incorreta."));
@@ -64,7 +63,7 @@ namespace RoleTop.Controllers
             return View(new HistoricoAgendamentoViewModel()
             {
                 Eventos = eventos,
-                NomeView = "Histórico",
+                NomeView = "Historico",
                 UsuarioNome = ObterUsuarioNomeSession(),
                 UsuarioEmail = ObterUsuarioSession()
             });

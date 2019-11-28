@@ -17,6 +17,8 @@ namespace project_RoleTopMVC.Respositories
         }
         
         public bool Inserir(Agendamento agendamento){
+            var quantidadeLinhas = File.ReadAllLines(PATH).Length;
+            agendamento.Evento.Id = (ushort) ++quantidadeLinhas;
             var linha = new string[] {PrepararRegistroCSV(agendamento)};
             File.AppendAllLines(PATH, linha);
             return true;
@@ -28,6 +30,8 @@ namespace project_RoleTopMVC.Respositories
             foreach(var linha in linhas)
             {
                 Agendamento agendamento = new Agendamento();
+                agendamento.Evento.Id = uint.Parse(ExtrairValorDoCampo("id", linha));
+                agendamento.Evento.Status = ushort.Parse(ExtrairValorDoCampo("status_pedido", linha));
                 agendamento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 agendamento.Cliente.CpfCnpj = ExtrairValorDoCampo ("cliente_cpfcnpj", linha);
                 agendamento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -61,7 +65,20 @@ namespace project_RoleTopMVC.Respositories
             Cliente cliente = agendamento.Cliente;
             Evento evento = agendamento.Evento;
 
-            return $"cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
+            return $"id={agendamento.Evento.Id};status_pedido{agendamento.Evento.Status};cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
+        }
+
+        public Agendamento ObterPor(uint id)
+        {
+            var agendamentosTotais = ObterTodos();
+            foreach(var agendamento in agendamentosTotais)
+            {
+                if(agendamento.Evento.Id == id)
+                {
+                    return agendamento;
+                }
+            }
+            return null;
         }
     }
 }

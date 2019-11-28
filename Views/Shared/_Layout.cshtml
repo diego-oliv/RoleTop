@@ -14,6 +14,12 @@
     {
         <link rel="stylesheet" type="text/css" href="~/css/style-form-pages.css">
         <link rel="stylesheet" type="text/css" href="~/css/style-secondary-pages.css">
+    } else if ("Dashboard".Equals(@Model.NomeView))
+    {
+        <link rel="stylesheet" type="text/css" href="~/css/style-dashboard.css">
+    } else if (ViewData["Action"].Equals("Historico"))
+    {
+        <link rel="stylesheet" type="text/css" href="~/css/style-dashboard.css">
     }
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
