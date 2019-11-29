@@ -14,10 +14,8 @@
     {
         <link rel="stylesheet" type="text/css" href="~/css/style-form-pages.css">
         <link rel="stylesheet" type="text/css" href="~/css/style-secondary-pages.css">
-    } else if ("Dashboard".Equals(@Model.NomeView))
-    {
-        <link rel="stylesheet" type="text/css" href="~/css/style-dashboard.css">
-    } else if (ViewData["Action"].Equals("Historico"))
+    } 
+    @if("dashboard".Equals(@Model.NomeView))
     {
         <link rel="stylesheet" type="text/css" href="~/css/style-dashboard.css">
     }

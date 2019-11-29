@@ -5,19 +5,17 @@
      <section id="status-agendamentos">
           <h3>Status dos Eventos</h3>
           <div id="painel">
-               <div class="box-status-solicitacoes aprovados">
+               <div class="box-status-pedidos aprovados">
                     <h4>Aprovados</h4>
-                    <p>@Model.AgendamentosAprovados</p>
+                    <p>@Model.PedidosAprovados</p>
                </div>
-
-               <div class="box-status-solicitacoes pendentes">
+               <div class="box-status-pedidos pendentes">
                     <h4>Pendentes</h4>
-                    <p>@Model.AgendamentosPendentes</p>
+                    <p>@Model.PedidosPendentes</p>
                </div>
-
-               <div class="box-status-solicitacoes reprovados">
+               <div class="box-status-pedidos reprovados">
                     <h4>Reprovados</h4>
-                    <p>@Model.AgendamentosRecusados</p>
+                    <p>@Model.PedidosReprovados</p>
                </div>
           </div>
      </section>
@@ -31,7 +29,9 @@
                          <th>Tema do Evento</th>
                          <th>Dia e Hora</th>
                          <th>Tipo do Evento</th>
+                         <th>Número de Pessoas</th>
                          <th>Serviços</th>
+                         <th>Descrição</th>
                          <th colspan="2" rowspan="2">Aprovar</th>
                     </tr>
                     
@@ -48,7 +48,15 @@
                          @foreach (var agendamento in Model.Agendamentos)
                          {
                               <tr>
-                                   <td></td>
+                                   <td>@agendamento.Evento.Cliente.Nome</td>
+                                   <td>@agendamento.Evento.Tema</td>
+                                   <td>@agendamento.Evento.DataDoAgendamento</td>
+                                   <td>@agendamento.Evento.TipoDoEvento</td>
+                                   <td>@agendamento.Evento.NumeroDePessoas</td>
+                                   <td>@agendamento.Evento.Servicos</td>
+                                   <td>@agendamento.Evento.Descricao</td>
+                                   <td><a href='@Url.Action("Aprovar", "Pedido", new {id = @agendamento.Evento.Id})'><i class="fas fa-check"></i></a></td>
+                                   <td><a href='@Url.Action("Reprovar", "Pedido", new {id = @agendamento.Evento.Id})'><i class="fas fa-times"></i></a></td>
                               </tr>
                          }
                </tbody>

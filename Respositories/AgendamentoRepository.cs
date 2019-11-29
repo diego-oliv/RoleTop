@@ -18,7 +18,7 @@ namespace project_RoleTopMVC.Respositories
         
         public bool Inserir(Agendamento agendamento){
             var quantidadeLinhas = File.ReadAllLines(PATH).Length;
-            agendamento.Evento.Id = (ushort) ++quantidadeLinhas;
+            agendamento.Evento.Id = (uint) ++quantidadeLinhas;
             var linha = new string[] {PrepararRegistroCSV(agendamento)};
             File.AppendAllLines(PATH, linha);
             return true;
@@ -31,7 +31,7 @@ namespace project_RoleTopMVC.Respositories
             {
                 Agendamento agendamento = new Agendamento();
                 agendamento.Evento.Id = uint.Parse(ExtrairValorDoCampo("id", linha));
-                agendamento.Evento.Status = ushort.Parse(ExtrairValorDoCampo("status_pedido", linha));
+                agendamento.Evento.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                 agendamento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 agendamento.Cliente.CpfCnpj = ExtrairValorDoCampo ("cliente_cpfcnpj", linha);
                 agendamento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -60,12 +60,37 @@ namespace project_RoleTopMVC.Respositories
                 return agendamentosCliente;
         }
 
+        public bool Atualizar(Agendamento agendamento)
+        {
+            var agendamentosTotais = File.ReadAllLines(PATH);
+            var agendamentoCSV = PrepararRegistroCSV(agendamento);
+            var linhaAgendamento = -1;
+            var resultado = false;
+            var id = agendamento.Evento.Id;
+            for(int i = 0 ; i < agendamentosTotais.Length ; i++)
+            {
+                var idConvertido = uint.Parse((ExtrairValorDoCampo("id", agendamentosTotais[i])));
+                if(id.Equals(idConvertido))
+                {
+                    linhaAgendamento = i;
+                    resultado = true;
+                    break;
+                }
+            }
+            if(!resultado)
+            {
+                agendamentosTotais[linhaAgendamento] = agendamentoCSV;
+                File.WriteAllLines(PATH, agendamentosTotais);
+            }
+            return resultado;
+        }
+
         private string PrepararRegistroCSV(Agendamento agendamento)
         {
             Cliente cliente = agendamento.Cliente;
             Evento evento = agendamento.Evento;
 
-            return $"id={agendamento.Evento.Id};status_pedido{agendamento.Evento.Status};cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
+            return $"id={agendamento.Evento.Id};status_pedido={agendamento.Evento.Status};cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
         }
 
         public Agendamento ObterPor(uint id)

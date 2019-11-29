@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using project_RoleTopMVC.Respositories;
 using project_RoleTopMVC.ViewModels;
 using project_RoleTopMVC.Models;
+using project_RoleTopMVC.Enums;
 
 namespace project_RoleTopMVC.Controllers
 {
@@ -42,11 +43,6 @@ namespace project_RoleTopMVC.Controllers
             agendamento.Cliente = evento.Cliente;
             if(agendamentoRepository.Inserir(agendamento))
             {
-                System.Console.WriteLine(agendamento.Evento.Tema);
-                System.Console.WriteLine(agendamento.Evento.Descricao);
-                System.Console.WriteLine(agendamento.Evento.Cliente.Nome);
-                System.Console.WriteLine(agendamento.Evento.NumeroDePessoas);
-                System.Console.WriteLine(agendamento.Evento.NumeroDePessoas);
                 return View("Sucesso", new RespostaViewModel(){
                     Mensagem = "Aguarde a aprovação dos nosso administradores",
                     NomeView = "Sucesso",
@@ -65,6 +61,35 @@ namespace project_RoleTopMVC.Controllers
         public IActionResult Aprovar(uint id)
         {
             Agendamento agendamento = agendamentoRepository.ObterPor(id);
+            agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
+            if (agendamentoRepository.Atualizar(agendamento))
+            {
+                return RedirectToAction("dashboard", "Administrador");
+            } else {
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao aprovar seu pedido.",
+                    NomeView = "dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            
+        }
+        public IActionResult Reprovar(uint id)
+        {
+            Agendamento agendamento = agendamentoRepository.ObterPor(id);
+            agendamento.Evento.Status = (uint) StatusPedido.REPROVADO;
+            if (agendamentoRepository.Atualizar(agendamento))
+            {
+                return RedirectToAction("dashboard", "Administrador");
+            } else {
+                return View("Erro", new RespostaViewModel(){
+                    Mensagem = "Houve um erro ao reprovar seu pedido.",
+                    NomeView = "dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
         }
     }
 }

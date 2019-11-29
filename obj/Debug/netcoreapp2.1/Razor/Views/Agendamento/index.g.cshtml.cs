@@ -63,7 +63,7 @@ using project_RoleTopMVC.Models;
             WriteLiteral("\r\n<main>\r\n     <h2>Agende seu evento top!</h2>\r\n     ");
             EndContext();
             BeginContext(53, 1950, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61bc0e0c61e14e4bbab710f19cd5b1e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6402557c67f54c8dab3e22dacf11d399", async() => {
                 BeginContext(119, 848, true);
                 WriteLiteral(@"
 
@@ -91,7 +91,7 @@ using project_RoleTopMVC.Models;
                ");
                 EndContext();
                 BeginContext(967, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee2b3823af1442f0a4955fee850c12ee", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4019b73876545fc89ffec8e67c28ba1", async() => {
                     BeginContext(1002, 9, true);
                     WriteLiteral("Selecione");
                     EndContext();
@@ -119,7 +119,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1037, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b3059c3e8e44993b6cfb19fce746bc8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "502fdd88d0f647b585bec37df20ef67d", async() => {
                     BeginContext(1061, 7, true);
                     WriteLiteral("Público");
                     EndContext();
@@ -141,7 +141,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1094, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2a1d413497642039dd0a7b1aeb4a73a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d79a2efba684f74bcaea41ff33c149a", async() => {
                     BeginContext(1118, 7, true);
                     WriteLiteral("Privado");
                     EndContext();
@@ -163,7 +163,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               </select>\r\n          </div>\r\n\r\n          <div>\r\n               <label for=\"servico\">Serviços Necessários</label>\r\n               <select id=\"servico\" name=\"servico\" required>\r\n               ");
                 EndContext();
                 BeginContext(1342, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "560bbbd50a054dc3a27be4c3004dbccf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "562588292ad14f9c9819b1e3481dfec4", async() => {
                     BeginContext(1377, 9, true);
                     WriteLiteral("Selecione");
                     EndContext();
@@ -191,7 +191,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1412, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73774b065a2e4d468a3fe7d920f4c333", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fd39bbc24114e3abb0886df51a7e890", async() => {
                     BeginContext(1435, 6, true);
                     WriteLiteral("Nenhum");
                     EndContext();
@@ -213,7 +213,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1467, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6b9717368da4655b33b4e66cc456e1b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8dd874ea30f449bf986d2042b214574f", async() => {
                     BeginContext(1487, 3, true);
                     WriteLiteral("Som");
                     EndContext();
@@ -235,7 +235,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1516, 46, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eac9ecfde7a1447f98ab6a9b25fa100d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3f9da4053e4416f9731975bff854937", async() => {
                     BeginContext(1543, 10, true);
                     WriteLiteral("Iluminação");
                     EndContext();
@@ -257,7 +257,7 @@ using project_RoleTopMVC.Models;
                 WriteLiteral("\r\n               ");
                 EndContext();
                 BeginContext(1579, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b824478a7718421692576711c3f98f70", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af33b4cb5945432baa5846a01ae33e77", async() => {
                     BeginContext(1601, 16, true);
                     WriteLiteral("Som & Iluminação");
                     EndContext();

@@ -11,16 +11,19 @@ namespace project_RoleTopMVC.Controllers
         [HttpGet]
         public IActionResult dashboard()
         {
+            var tipoUsuarioSession = uint.Parse(ObterUsuarioTipoSession());
+            if(tipoUsuarioSession.Equals((uint) TiposUsuario.ADMINISTRADOR))
+            {
             var agendamentos = agendamentoRepository.ObterTodos();
             DashboardViewModel dashboardViewModel = new DashboardViewModel();
             foreach(var agendamento in agendamentos)
             {
                 switch(agendamento.Evento.Status)
                 {
-                case (ushort) StatusPedido.REPROVADO:
+                case (uint) StatusPedido.REPROVADO:
                     dashboardViewModel.PedidosReprovados++;
                 break;
-                case (ushort) StatusPedido.APROVADO:
+                case (uint) StatusPedido.APROVADO:
                     dashboardViewModel.PedidosAprovados++;
                 break;
                 default:
@@ -29,9 +32,15 @@ namespace project_RoleTopMVC.Controllers
                 break;
                 }
             }
-            dashboardViewModel.NomeView = "Dashboard";
+            dashboardViewModel.NomeView = "dashboard";
             dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
             return View(dashboardViewModel);
+            } else {
+                return View("Falha", new RespostaViewModel(){
+                    NomeView = "dashboard",
+                    Mensagem = "Você não é digno de entrar nessa tela."
+                });
+            }
         } 
     }
 }

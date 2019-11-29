@@ -5,15 +5,15 @@ namespace project_RoleTopMVC.Models
 {
     public class Evento
     {
-        public uint Id {get;set;}
-        public Cliente Cliente {get;set;}
         public string Tema {get; set;}
         public string DataDoAgendamento {get;set;}
         public string NumeroDePessoas {get;set;}
         public string TipoDoEvento {get;set;}
         public string Servicos {get;set;}
         public string Descricao {get;set;}
-        public ushort Status {get;set;}
+        public Cliente Cliente {get;set;}
+        public uint Id {get;set;}
+        public uint Status {get;set;}
 
         public Evento(){
             //this.Cliente = new Cliente();
@@ -27,7 +27,7 @@ namespace project_RoleTopMVC.Models
             this.Descricao = descricao;
             this.Cliente = new Cliente();
             this.Id = 0;
-            this.Status = (ushort) StatusPedido.PEDENTE;
+            this.Status = (uint) StatusPedido.PEDENTE;
         }
     }
 }

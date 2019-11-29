@@ -12,9 +12,11 @@ namespace project_RoleTopMVC.Models
         public string CpfCnpj {get; set;}
         public string Email {get; set;}
         public string Senha {get; set;}
+        public uint TipoUsuario {get;set;}
+
         public Cliente()
-        {
-        }
+        {}
+        
         public Cliente(string Nome, string CEP, string Endereco, string Telefone, string CpfCnpj, string Email, string Senha, string Complemento)
         {
             this.Nome = Nome;

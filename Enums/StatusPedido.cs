@@ -6,4 +6,10 @@ namespace project_RoleTopMVC.Enums
         APROVADO = 1,
         REPROVADO = 2
     }
+
+    public enum TiposUsuario : uint
+    {
+        ADMINISTRADOR = 0,
+        CLIENTE = 1
+    }
 }
