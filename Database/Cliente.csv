@@ -1,2 +1,2 @@
-tipo_usuario=0;nome=Administrador;admin@email.com;senha=123456;telefone=;endereco=;cep=;cpfcnpj=;complemento=;
-tipo_usuario=1;nome=Diego de Oliveira Freitas;email=diego@gmail.com;senha=123456;telefone=1126229032;endereco=Avenida Guarulhos, 5842; cep=03170111;cpfcnpj=34663602000;complemento=T15 APT4
+tipo_usuario=0;nome=Administrador;email=admin@email.com;senha=123456;telefone=;endereco=;cep=;cpfcnpj=;complemento=
+tipo_usuario=1;nome=Diego de Oliveira Freitas;email=diego@gmail.com;senha=123456;telefone=1126229032;endereco=Avenida Guarulhos, 5842;cep=03170111;cpfcnpj=34663602000;complemento=T15 APT4

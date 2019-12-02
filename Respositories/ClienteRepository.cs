@@ -42,7 +42,7 @@ namespace project_RoleTopMVC.Respositories
         }
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};telefone={cliente.Telefone};endereco={cliente.Endereco}; cep={cliente.CEP};cpfcnpj={cliente.CpfCnpj};complemento={cliente.Complemento}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};telefone={cliente.Telefone};endereco={cliente.Endereco};cep={cliente.CEP};cpfcnpj={cliente.CpfCnpj};complemento={cliente.Complemento}";
         }
     }
 }

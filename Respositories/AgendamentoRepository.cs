@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using project_RoleTopMVC.Models;
 using System.Collections.Generic;
+using project_RoleTopMVC.Enums;
 
 namespace project_RoleTopMVC.Respositories
 {
@@ -21,6 +22,7 @@ namespace project_RoleTopMVC.Respositories
             agendamento.Evento.Id = (uint) ++quantidadeLinhas;
             var linha = new string[] {PrepararRegistroCSV(agendamento)};
             File.AppendAllLines(PATH, linha);
+
             return true;
         }
         public List<Agendamento> ObterTodos()
@@ -60,6 +62,42 @@ namespace project_RoleTopMVC.Respositories
                 return agendamentosCliente;
         }
 
+        public void AtualizarEstado(uint id,string NovoEstado){
+            //TODO PEGA O AGENDAMENTO
+            Agendamento agendamento = ObterPor(id);
+            int linha = 0;
+
+            //TODO MUDA O ESTADO DO AGENDAMENTO
+            if(NovoEstado == "Aprovar"){
+                agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
+            }else if(NovoEstado == "Reprovar")
+            {
+                agendamento.Evento.Status = (uint) StatusPedido.REPROVADO;
+            }
+            
+            //Inserir(agendamento);
+
+            //TODO PEGA A LINHA DO AGENDAMENTO
+            var agendamentosTotais = ObterTodos();
+            for(int i=0; i < agendamentosTotais.Count; i++)
+            {
+                if(agendamentosTotais[i].Evento.Id == id)
+                {
+                    linha = i;
+                    break;
+                }
+            }
+            //TODO PEGA TODO O ARQUIVO
+            var linhas = File.ReadAllLines(PATH);
+            
+            //TODO PEGA APENAS A LINHA QUE EU QUERO MUDAR E PREPARA UM REGISTRO CSV
+            linhas[linha] = PrepararRegistroCSV(agendamento);
+
+            //TODO MANDA DE VOLTA TODAS AS MUDANÇAS PRO CSV
+            File.WriteAllLines(PATH,linhas);
+
+        }
+
         public bool Atualizar(Agendamento agendamento)
         {
             var agendamentosTotais = File.ReadAllLines(PATH);
@@ -90,7 +128,7 @@ namespace project_RoleTopMVC.Respositories
             Cliente cliente = agendamento.Cliente;
             Evento evento = agendamento.Evento;
 
-            return $"id={agendamento.Evento.Id};status_pedido={agendamento.Evento.Status};cliente_nome={agendamento.Evento.Cliente.Nome};cliente_cpfcnpj={agendamento.Evento.Cliente.CpfCnpj};cliente_telefone={agendamento.Evento.Cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
+            return $"id={evento.Id};status_pedido={evento.Status};cliente_nome={cliente.Nome};cliente_cpfcnpj={cliente.CpfCnpj};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};evento_tema={evento.Tema};evento_data={evento.DataDoAgendamento};evento_quantidadePessoas={evento.NumeroDePessoas};evento_tipo={evento.TipoDoEvento};evento_servicos={evento.Servicos};evento_descricao={evento.Descricao}";
         }
 
         public Agendamento ObterPor(uint id)

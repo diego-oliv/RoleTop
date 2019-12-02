@@ -60,8 +60,12 @@ namespace project_RoleTopMVC.Controllers
         }
         public IActionResult Aprovar(uint id)
         {
+            
+            agendamentoRepository.AtualizarEstado(id,"Aprovar");
             Agendamento agendamento = agendamentoRepository.ObterPor(id);
-            agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
+            // agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
+
+
             if (agendamentoRepository.Atualizar(agendamento))
             {
                 return RedirectToAction("dashboard", "Administrador");
@@ -77,8 +81,9 @@ namespace project_RoleTopMVC.Controllers
         }
         public IActionResult Reprovar(uint id)
         {
+            agendamentoRepository.AtualizarEstado(id,"Reprovar");
             Agendamento agendamento = agendamentoRepository.ObterPor(id);
-            agendamento.Evento.Status = (uint) StatusPedido.REPROVADO;
+            // agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
             if (agendamentoRepository.Atualizar(agendamento))
             {
                 return RedirectToAction("dashboard", "Administrador");

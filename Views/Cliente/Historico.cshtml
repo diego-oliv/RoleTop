@@ -23,7 +23,7 @@ ViewData["H2"] = "Historico de Agendamentos";
           @foreach( var evento in Model.Eventos ) {
                <tr>
                <td>@evento.Evento.Tema</td>
-               <td>@evento.Evento.Tema</td>
+               <td>@evento.Evento.DataDoAgendamento</td>
                <td>@evento.Evento.TipoDoEvento</td>
                <td>@evento.Evento.Servicos</td>
                <td>@evento.Evento.NumeroDePessoas</td>

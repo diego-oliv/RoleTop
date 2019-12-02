@@ -32,13 +32,13 @@ namespace project_RoleTopMVC.Controllers
                 break;
                 }
             }
-            dashboardViewModel.NomeView = "dashboard";
+            dashboardViewModel.NomeView = "Dashboard";
             dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
             return View(dashboardViewModel);
             } else {
                 return View("Falha", new RespostaViewModel(){
-                    NomeView = "dashboard",
-                    Mensagem = "Você não é digno de entrar nessa tela."
+                    NomeView = "Dashboard",
+                    Mensagem = "Você não é digno de entrar nesta tela."
                 });
             }
         } 

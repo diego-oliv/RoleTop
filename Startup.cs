@@ -34,7 +34,7 @@ namespace RoleTop
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSession( options =>{
-                options.IdleTimeout = TimeSpan.FromSeconds(15);
+                options.IdleTimeout = TimeSpan.FromSeconds(10000000000);
                 options.Cookie.IsEssential = true;
             });
         }
