@@ -41,7 +41,7 @@ namespace RoleTop.Controllers
                                     HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
                                     HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
                                     HttpContext.Session.SetString(SESSION_TIPO_USUARIO, cliente.TipoUsuario.ToString());
-                                    return RedirectToAction("Historico", "Cliente");
+                                    return RedirectToAction("Index", "Home");
 
                                 case (uint) TiposUsuario.ADMINISTRADOR:
                                     HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);

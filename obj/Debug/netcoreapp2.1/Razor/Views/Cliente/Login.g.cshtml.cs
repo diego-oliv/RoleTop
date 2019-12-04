@@ -55,7 +55,7 @@ using project_RoleTopMVC.Models;
             WriteLiteral("<main>\r\n     <h2>Faça o evento mais top do ano!</h2>\r\n     ");
             EndContext();
             BeginContext(59, 658, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9100c181e92a45339eec30a01c4f0d76", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4fc5e56c92943029428efcc97c752ff", async() => {
                 BeginContext(120, 485, true);
                 WriteLiteral(@"
 

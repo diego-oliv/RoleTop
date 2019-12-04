@@ -40,28 +40,28 @@
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#historia'>Conheça o Galpão</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#galeria'>Galeria de Fotos</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#local'>Localização</a></li>
-                        @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                        @if(!string.IsNullOrEmpty(@Model.UsuarioEmail))
                         {
-                        <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
-                        } else
+                            @if (@Model.UsuarioEmail == "admin@email.com")
+                            {
+                                <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
+                                <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Administrador" asp-action="Dashboard">Dashboard</a></li>
+                                <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Administrador" asp-action="Eventos">Eventos</a></li>
+                            } else
+                            {
+                                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Historico">Eventos Agendados</a></li>
+                                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Diga tchau!</a></li>
+                                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Agendamento" asp-action="Index">agende seu evento</a></li>
+                            }
+                        } else 
                         {
-                            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Diga tchau!</a></li>
-                            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Historico">Agendamentos</a></li>
-                        }
-                        @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
-                        {
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cadastro")'>agende seu evento!</a></li>
-                        } else
-                        {
-                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Agendamento")'>agende seu evento!</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login/Cadastro</a></li>
+                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cadastro" asp-action="Index">agende seu evento</a></li>
                         }
                     </ul>
                 </div>
             </nav>
         </div>
-        <!--
-            Não esquecer de colocar aqui a #LogoArea
-        -->
         @if ("Home".Equals(@Model.NomeView))
         {
             @await Html.PartialAsync("_HeaderHomePage");
