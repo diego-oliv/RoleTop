@@ -17,6 +17,7 @@ ViewData["H2"] = "Historico de Agendamentos";
                <th>Serviços</th>
                <th>Número de Pessoas</th>
                <th>Descrição</th>
+               <th>Status do Evento</th>
           </tr>
      </thead>
      <tbody>
@@ -28,6 +29,16 @@ ViewData["H2"] = "Historico de Agendamentos";
                <td>@evento.Evento.Servicos</td>
                <td>@evento.Evento.NumeroDePessoas</td>
                <td>@evento.Evento.Descricao</td>
+               @if (@evento.Evento.Status == 0)
+               {
+                    <td>Seu pedido está em análise.</td>
+               } else if (@evento.Evento.Status == 1)
+               {
+                    <td>Seu evento foi aprovado.</td>
+               } else if(@evento.Evento.Status == 2)
+               {
+                    <td>Seu evento foi reporvado.</td>
+               }
                </tr>
           }
      </tbody>

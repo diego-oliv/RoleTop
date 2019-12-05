@@ -50,7 +50,7 @@ namespace RoleTop.Controllers
                                     return RedirectToAction("Dashboard", "Administrador");
                             }
                         } else {
-                            return View("Falha", new RespostaViewModel("A senha está incorreta."));
+                            return RedirectToAction("Login");
                         }
                     } else {
                         return View("Falha", new RespostaViewModel($"Usuário {usuario} não foi encontrado."));

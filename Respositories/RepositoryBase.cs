@@ -14,7 +14,6 @@ namespace project_RoleTopMVC.Respositories
             }else{
                 valor = linha.Substring(indiceChave);
             }
-        System.Console.WriteLine($"Campo: {nomeCampo} tem valor {valor}");
         return valor.Replace(nomeCampo + "=", "");
         }
     }

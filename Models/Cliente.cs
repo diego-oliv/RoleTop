@@ -27,6 +27,7 @@ namespace project_RoleTopMVC.Models
             this.Email = Email;
             this.Senha = Senha;
             this.Complemento = Complemento;
+            this.TipoUsuario = 1;
         }
     }
 }

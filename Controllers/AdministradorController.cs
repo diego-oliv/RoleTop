@@ -9,7 +9,7 @@ namespace project_RoleTopMVC.Controllers
     {
         AgendamentoRepository agendamentoRepository = new AgendamentoRepository();
         [HttpGet]
-        public IActionResult dashboard()
+        public IActionResult Dashboard()
         {
             var tipoUsuarioSession = uint.Parse(ObterUsuarioTipoSession());
             if(tipoUsuarioSession.Equals((uint) TiposUsuario.ADMINISTRADOR))
@@ -42,5 +42,43 @@ namespace project_RoleTopMVC.Controllers
                 });
             }
         } 
-    }
+
+            public IActionResult Eventos()
+            {
+                var tipoUsuarioSession = uint.Parse(ObterUsuarioTipoSession());
+                if (tipoUsuarioSession.Equals((uint) TiposUsuario.ADMINISTRADOR))
+                {
+                    var agendamentos = agendamentoRepository.ObterTodos();
+                    DashboardViewModel dashboardViewModel = new DashboardViewModel();
+
+                    foreach(var agendamento in agendamentos)
+                    {
+                        switch(agendamento.Evento.Status)
+                        {
+                        case (uint) StatusPedido.REPROVADO:
+                            dashboardViewModel.Agendamentos.Add(agendamento);
+                        break;
+                        case (uint) StatusPedido.APROVADO:
+                            dashboardViewModel.Agendamentos.Add(agendamento);
+                        break;
+                        default:
+                            dashboardViewModel.Agendamentos.Add(agendamento);
+                        break;
+                        }
+                    }
+
+
+                    dashboardViewModel.NomeView = "Historico";
+                    dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
+                    return View(dashboardViewModel);
+                } else 
+                {
+                    return View("Falha", new RespostaViewModel()
+                    {
+                        NomeView = "Dashboard",
+                        Mensagem = "Você não é digno de entrar nesta página."
+                    });
+                }
+            }
+    } 
 }

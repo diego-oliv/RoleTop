@@ -1,0 +1,52 @@
+@model project_RoleTopMVC.ViewModels.DashboardViewModel
+<main>
+     <h2>Eventos Agendados</h2>
+     <section id="lista-solicitacoes">
+          <table>
+               <thead>
+                    <tr>
+                         <th>Nome</th>
+                         <th>Tema do Evento</th>
+                         <th>Dia e Hora</th>
+                         <th>Tipo do Evento</th>
+                         <th>Número de Pessoas</th>
+                         <th>Serviços</th>
+                         <th>Descrição</th>
+                         <th>Status do Evento</th>
+                    </tr>
+                    
+               </thead>
+               <tfoot>
+                    <tr>
+                         <td colspan="8">
+                              <p>Pedidos atualizados em 12/12/2012 às @DateTime.Now</p>
+                         </td>
+                    </tr>
+               </tfoot>
+               <tbody>
+                         @foreach (var agendamento in Model.Agendamentos)
+                         {
+                              <tr>
+                                   <td>@agendamento.Cliente.Nome</td>
+                                   <td>@agendamento.Evento.Tema</td>
+                                   <td>@agendamento.Evento.DataDoAgendamento</td>
+                                   <td>@agendamento.Evento.TipoDoEvento</td>
+                                   <td>@agendamento.Evento.NumeroDePessoas</td>
+                                   <td>@agendamento.Evento.Servicos</td>
+                                   <td>@agendamento.Evento.Descricao</td>
+                                   @if(@agendamento.Evento.Status == 0)
+                                   {
+                                        <td>Pendente</td>
+                                   }else if(@agendamento.Evento.Status == 1)
+                                   {
+                                        <td>Aprovado</td>
+                                   }else if(@agendamento.Evento.Status == 2)
+                                   {
+                                        <td>Reprovado</td>
+                                   }
+                              </tr>
+                         }
+               </tbody>
+          </table>
+     </section>
+</main>
