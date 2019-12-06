@@ -1,3 +1,4 @@
+@model project_RoleTopMVC.ViewModels.RespostaViewModel
 <main>
      <h2>Cadastra aí meu consagrado!</h2>
      <form method="POST" action='@Url.Action("CadastrarCliente", "Cadastro")'>
@@ -42,6 +43,10 @@
                <br />
                <input id="email" type="email" name="email" minlength="10" required>
           <div>
+
+               @if(!string.IsNullOrEmpty(@Model.Mensagem)){
+               <p>@Model.Mensagem</p>
+          }
 
           <div>
                <label for="senha">Senha</label>

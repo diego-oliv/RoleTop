@@ -1,18 +1,24 @@
+@model project_RoleTopMVC.ViewModels.RespostaViewModel
+
 <main>
-     <h2>Faça o evento mais top do ano!</h2>
+     <h2> Faça o evento mais top do ano! </h2>
+
      <form method="POST" action='@Url.Action("Login", "Cliente")'>
 
+          @if(!string.IsNullOrEmpty(@Model.Mensagem)){
+               <p>@Model.Mensagem</p>
+          }
           <div>
                <label for="email">Email</label>
                <br />
                <input type="email" id="email" name="email" required>
           </div>
 
+
           <div>
-               <label for="senha">Senha
+               <label for="senha">Senha</label>
                <br />
                <input type="password" id="senha" name="senha" required>
-               </label>
           </div>
 
           <input type="submit" value="Entrar">

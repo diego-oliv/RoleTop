@@ -19,7 +19,7 @@ namespace RoleTop.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View(new BaseViewModel(){
+            return View(new RespostaViewModel(){
                 NomeView = "Login",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
@@ -50,10 +50,10 @@ namespace RoleTop.Controllers
                                     return RedirectToAction("Dashboard", "Administrador");
                             }
                         } else {
-                            return RedirectToAction("Login");
+                            return View("Login", new RespostaViewModel(" *Senha incorreta* "));
                         }
                     } else {
-                        return View("Falha", new RespostaViewModel($"Usuário {usuario} não foi encontrado."));
+                        return View("Login", new RespostaViewModel($" * Usuário {usuario} não foi encontrado *"));
                     }
             } catch(Exception e){
                 System.Console.WriteLine(e.StackTrace);

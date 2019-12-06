@@ -17,7 +17,7 @@ namespace project_RoleTopMVC.Controllers
         
         public IActionResult Index()
         {
-            return View(new BaseViewModel(){
+            return View(new RespostaViewModel(){
                 NomeView = "Cadastro",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
@@ -40,7 +40,7 @@ namespace project_RoleTopMVC.Controllers
                     clienteRepository.Inserir(cliente);
                     return View("Sucesso", new RespostaViewModel("O cliente foi cadastrado com sucesso."));
                 }
-                return View("Falha", new RespostaViewModel("As senhas não são iguais."));
+                return View("Index", new RespostaViewModel(" *As senhas não são iguais* "));
 
             } catch(Exception e) {
                 System.Console.WriteLine(e.StackTrace);
