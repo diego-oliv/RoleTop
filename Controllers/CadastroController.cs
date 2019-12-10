@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using project_RoleTopMVC.Models;
-using project_RoleTopMVC.Respositories;
+using project_RoleTopMVC.Repositories;
 using project_RoleTopMVC.ViewModels;
 
 namespace project_RoleTopMVC.Controllers
@@ -32,11 +32,11 @@ namespace project_RoleTopMVC.Controllers
                         form["nome"], 
                         form["cep"], 
                         form["endereco"], 
+                        form["complemento"],
                         form["telefone"], 
                         form["cpf/cnpj"], 
                         form["email"], 
-                        form["senha"], 
-                        form["complemento"]);
+                        form["senha"]);
                     clienteRepository.Inserir(cliente);
                     return View("Sucesso", new RespostaViewModel("O cliente foi cadastrado com sucesso."));
                 }

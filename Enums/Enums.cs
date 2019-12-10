@@ -1,6 +1,6 @@
 namespace project_RoleTopMVC.Enums
 {
-    public enum StatusPedido : uint
+    public enum StatusAgendamento : uint
     {
         PEDENTE = 0,
         APROVADO = 1,

@@ -14,7 +14,6 @@ C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\bin\Debug\netcoreap
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\RoleTop.TagHelpers.input.cache
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\RoleTop.TagHelpers.output.cache
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\RoleTop.RazorCoreGenerate.cache
-C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\HTML_Reference\Historico.g.cshtml.cs
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\dashboard.g.cshtml.cs
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Agendamento\index.g.cshtml.cs
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cadastro\Index.g.cshtml.cs
@@ -73,3 +72,5 @@ C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\RoleTop.
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\RoleTop.csproj.CopyComplete
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Historico.g.cshtml.cs
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Eventos.g.cshtml.cs
+C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Eventos.g.cshtml.cs
+C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Historico.g.cshtml.cs

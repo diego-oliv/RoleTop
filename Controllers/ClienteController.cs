@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using project_RoleTopMVC.Controllers;
-using project_RoleTopMVC.Respositories;
+using project_RoleTopMVC.Repositories;
 using project_RoleTopMVC.ViewModels;
 using project_RoleTopMVC.Enums;
 

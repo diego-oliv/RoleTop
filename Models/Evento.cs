@@ -16,7 +16,7 @@ namespace project_RoleTopMVC.Models
         public uint Status {get;set;}
 
         public Evento(){
-            //this.Cliente = new Cliente();
+            
         }
         public Evento (string tema, string data, string quantidade, string tipo, string servicos, string descricao){
             this.Tema = tema;
@@ -27,7 +27,7 @@ namespace project_RoleTopMVC.Models
             this.Descricao = descricao;
             this.Cliente = new Cliente();
             this.Id = 0;
-            this.Status = (uint) StatusPedido.PEDENTE;
+            this.Status = (uint) StatusAgendamento.PEDENTE;
         }
     }
 }

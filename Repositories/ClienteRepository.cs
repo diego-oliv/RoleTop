@@ -1,7 +1,7 @@
 using System.IO;
 using project_RoleTopMVC.Models;
 
-namespace project_RoleTopMVC.Respositories
+namespace project_RoleTopMVC.Repositories
 {
     public class ClienteRepository : RepositoryBase
     {

@@ -1,4 +1,4 @@
-namespace project_RoleTopMVC.Respositories
+namespace project_RoleTopMVC.Repositories
 {
     public class RepositoryBase
     {

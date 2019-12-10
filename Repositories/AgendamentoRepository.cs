@@ -4,7 +4,7 @@ using project_RoleTopMVC.Models;
 using System.Collections.Generic;
 using project_RoleTopMVC.Enums;
 
-namespace project_RoleTopMVC.Respositories
+namespace project_RoleTopMVC.Repositories
 {
     public class AgendamentoRepository : RepositoryBase
     {
@@ -68,10 +68,10 @@ namespace project_RoleTopMVC.Respositories
             int linha = 0;
             //TODO MUDA O ESTADO DO AGENDAMENTO
             if(NovoEstado == "Aprovar"){
-                agendamento.Evento.Status = (uint) StatusPedido.APROVADO;
+                agendamento.Evento.Status = (uint) StatusAgendamento.APROVADO;
             }else if(NovoEstado == "Reprovar")
             {
-                agendamento.Evento.Status = (uint) StatusPedido.REPROVADO;
+                agendamento.Evento.Status = (uint) StatusAgendamento.REPROVADO;
             }
             //Inserir(agendamento);
             //TODO PEGA A LINHA DO AGENDAMENTO

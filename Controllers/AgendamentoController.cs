@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using project_RoleTopMVC.Respositories;
+using project_RoleTopMVC.Repositories;
 using project_RoleTopMVC.ViewModels;
 using project_RoleTopMVC.Models;
 using project_RoleTopMVC.Enums;
@@ -36,7 +36,6 @@ namespace project_RoleTopMVC.Controllers
         public IActionResult Agendar(IFormCollection form)
         {
             Agendamento agendamento = new Agendamento();
-            //Cliente cliente = new Cliente();
             Evento evento = new Evento(form["tema"], form["data"], form["quantidade"], form["tipo"], form["servico"], form["descricao"]);
             evento.Cliente = clienteRepository.ObterPor(ObterUsuarioSession());
             agendamento.Evento = evento;
