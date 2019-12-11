@@ -1,0 +1,23 @@
+@model project_RoleTopMVC.ViewModels.GaleriaViewModel
+<main>
+     <!-- TODO:  -->
+     <form method="POST" action='@Url.Action("Index", "Galeria")'>
+     <h2>Coloque aqui a foto do seu evento!</h2>
+     <div>
+     <input id="photo" type="file">
+     </div>
+     <input type="submit" value="Enviar!">
+     </form>
+
+
+     <section id="galeria">
+          <div class="section-container">
+               <h2>Os eventos mais top!</h2>
+               <div class="flex-group photo-gallery">
+               @foreach(var photo in @Model.Photos){
+                    
+               }
+               </div>
+          </div>
+     </section>
+</main>

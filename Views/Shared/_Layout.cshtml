@@ -40,6 +40,7 @@
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active">Principal</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#historia'>Conheça o Galpão</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#galeria'>Galeria de Fotos</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-action="Index" asp-controller="Galeria">A sua Galeria</a></li>
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#local'>Localização</a></li>
                         @if(!string.IsNullOrEmpty(@Model.UsuarioEmail))
                         {

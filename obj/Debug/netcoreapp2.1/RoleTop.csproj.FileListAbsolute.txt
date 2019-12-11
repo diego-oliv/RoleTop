@@ -74,3 +74,4 @@ C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Vi
 C:\Users\35883602800\Desktop\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Eventos.g.cshtml.cs
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Eventos.g.cshtml.cs
 C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Historico.g.cshtml.cs
+C:\Users\rapma\OneDrive\Área de Trabalho\project-RoleTopMVC\obj\Debug\netcoreapp2.1\Razor\Views\Galeria\Index.g.cshtml.cs

@@ -55,7 +55,7 @@ using project_RoleTopMVC.Models;
             WriteLiteral("<main>\r\n     <h2>Cadastra aí meu consagrado!</h2>\r\n     ");
             EndContext();
             BeginContext(112, 2214, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3842dde70f6140b98580e5db500184c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c2bee9a2419450989ba81b1d24a844f", async() => {
                 BeginContext(185, 1492, true);
                 WriteLiteral(@"
           <div>
